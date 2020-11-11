@@ -62,5 +62,13 @@ public class Postre {
     public String toString() {
         return "sabor=" + sabor + ", precioParcial=" + precioParcial + ", aderezos=" + aderezos + '}';
     }
+    
+    public void anadirAderezo(Aderezo aderezo){
+        this.getAderezos().add(aderezo);
+    }
+    
+    public void quitarAderezo(Aderezo aderezo){
+        this.getAderezos().remove(aderezo);
+    }
 
 }
