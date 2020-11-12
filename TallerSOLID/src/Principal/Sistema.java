@@ -20,13 +20,13 @@ public class Sistema {
         // Finalmente mostrar el precio final de cada uno
         LecheEntera leche = new LecheDeslactosada();
         ManejadorDeLeche mnj_leche = new ManejadorDeLeche();
-        
+
         // Producir Helado
         Helado helado_vainilla = new Helado("Vainilla",7.85);
         helado_vainilla.anadirAderezo(Aderezo.CREMA);
         helado_vainilla.anadirAderezo(Aderezo.FRUTILLA);
         System.out.println(helado_vainilla);
-//        mnj_leche.cambiarTipoLeche(leche, helado_vainilla);
+        mnj_leche.cambiarTipoLeche(leche, helado_vainilla);
         System.out.println(helado_vainilla.showPrecioFinal());
         
         // Producir Pastel

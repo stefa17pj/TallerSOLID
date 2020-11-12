@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package Leche;
-
 /**
+
  *
  * @author Pedro Mendoza
  */
@@ -18,8 +18,9 @@ public class LecheDeslactosada extends LecheEntera {
 
     @Override
     public void usarPastel() {
-        // Lanzar error No se puede usar en pastel
-        throw new RuntimeException(this.getClass() + ": No se puede usar en pastel");
+        //No se habilita esta opcion para crear pasteles
+        
+        
     }
         
 }
