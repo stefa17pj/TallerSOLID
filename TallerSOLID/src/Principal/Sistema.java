@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package Principal;
-import Adicionales.Aderezo;
+import Adicionales.Crema;
+import Adicionales.Frutilla;
 import Postres.*;
 import Procesos.*;
 import Leche.*;
+import java.util.ArrayList;
 /**
  *
  * @author djurado
@@ -18,24 +20,25 @@ public class Sistema {
         // a ambos agregarles CREMA y FRUTILLAS
         // y cambiar el tipo de leche por Leche Descremada
         // Finalmente mostrar el precio final de cada uno
-        LecheEntera leche = new LecheDeslactosada();
+        ArrayList<Postre> arrPostres = new ArrayList<>();
+        LecheEntera leche = new LecheDescremada();
         ManejadorDeLeche mnj_leche = new ManejadorDeLeche();
-
-        // Producir Helado
-        Helado helado_vainilla = new Helado("Vainilla",7.85);
-        helado_vainilla.anadirAderezo(Aderezo.CREMA);
-        helado_vainilla.anadirAderezo(Aderezo.FRUTILLA);
-        System.out.println(helado_vainilla);
-        mnj_leche.cambiarTipoLeche(leche, helado_vainilla);
-        System.out.println(helado_vainilla.showPrecioFinal());
         
+        // Producir Helado
+        Postre helado_vainilla = new Helado("Vainilla",7.78);
+        arrPostres.add(helado_vainilla);
         // Producir Pastel
-        Pastel pastel_chocolate = new Pastel("Chocolate",15.55);
-        pastel_chocolate.quitarAderezo(Aderezo.CREMA);
-        pastel_chocolate.anadirAderezo(Aderezo.FRUTILLA);
-        System.out.println(pastel_chocolate);
-//        mnj_leche.cambiarTipoLeche(leche, pastel_chocolate);
-        System.out.println(helado_vainilla.showPrecioFinal());
+        Postre pastel_chocolate = new Pastel("Chocolate",15.58);
+        arrPostres.add(pastel_chocolate);
+        
+        arrPostres.forEach(postre -> {
+            postre.anadirAderezo(new Crema());
+            postre.anadirAderezo(new Frutilla());
+            System.out.println(postre);
+            mnj_leche.cambiarTipoLeche(leche,postre);
+            System.out.println(ManejadorDePrecio.showPrecioFinal(postre));
+        });        
+
         
         
     }

@@ -17,4 +17,5 @@ No se puede elaborar con leche deslactosada un pastel, la clase manejador de lec
 la leche descremada, solo se necesita modificar el manejador para su correcto funcionamiento, por lo que se hace referencia al Open/close principle.
 
 ## Literal 6
+En el metodo main se cambia la implemención de las clases para que funcionen con las correcciones realizadas anteriormente. Cumpliendo de esta forma con todos los princios de SOLID.
 

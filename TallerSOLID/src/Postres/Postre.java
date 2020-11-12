@@ -47,16 +47,6 @@ public class Postre {
     public void setAderezos(ArrayList<Aderezo> aderezos) {
         this.aderezos = aderezos;
     }
-
-    public double calcularPrecioFinal() {
-        double precioFinal;
-        precioFinal = (precioParcial + (precioParcial * 0.12)) + (aderezos.size() * 0.50);
-        return precioFinal;
-    }
-    
-    public String showPrecioFinal() {
-        return "Precio Final: $ " + calcularPrecioFinal();
-    }
     
     @Override
     public String toString() {
